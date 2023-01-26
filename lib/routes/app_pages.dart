@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 
-import '../home/bindings/home_binding.dart';
-import '../home/views/home_view.dart';
+import '../home/home_view.dart';
 
 part 'app_routes.dart';
 
@@ -14,7 +13,6 @@ class AppPages {
     GetPage(
       name: _Paths.HOME,
       page: () => const HomeView(),
-      binding: HomeBinding(),
     ),
   ];
 }
