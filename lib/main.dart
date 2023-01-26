@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo_app/app/app.dart';
+import 'package:flutter_todo_app/core/di/injection.dart';
 
-import 'package:get/get.dart';
+import 'core/persist/persist_storage.dart';
 
-import 'app/routes/app_pages.dart';
-
-void main() {
-  runApp(
-    GetMaterialApp(
-      title: "Application",
-      initialRoute: AppPages.INITIAL,
-      getPages: AppPages.routes,
-    ),
-  );
+Future<void> main() async {
+  await loadPersistStorage();
+  await loadInjections();
+  runApp(const App());
 }
