@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/constants/app_constants.dart';
-import 'package:flutter_todo_app/home/home_controller.dart';
+import 'package:flutter_todo_app/routes/app_pages.dart';
 import 'package:get/get.dart';
+
+import 'home_controller.dart';
 
 final _controller = Get.find<HomeController>();
 
@@ -94,7 +96,20 @@ class HomeView extends StatelessWidget {
                 );
               },
             ),
-            const SizedBox(height: 2),
+            const SizedBox(height: 20),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: themeData.primaryColor),
+                onPressed: () {
+                  Get.toNamed(Routes.TODO);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Text(
+                    'Go to Todos',
+                    style: themeData.textTheme.headline1,
+                  ),
+                ))
           ],
         ),
       ),
