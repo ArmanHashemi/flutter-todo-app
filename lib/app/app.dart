@@ -2,9 +2,9 @@ import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/app/settings.dart';
 import 'package:flutter_todo_app/constants/app_constants.dart';
+import 'package:flutter_todo_app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
-import '../routes/app_pages.dart';
 import 'theme.dart';
 
 final _settings = Get.find<Settings>();

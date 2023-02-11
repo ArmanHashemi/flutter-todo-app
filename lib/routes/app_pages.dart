@@ -1,7 +1,6 @@
+import 'package:flutter_todo_app/modules/home/view/home_view.dart';
+import 'package:flutter_todo_app/modules/todo/view/todo_view.dart';
 import 'package:get/get.dart';
-
-import '../modules/home/home_view.dart';
-import '../modules/todo/view/todo_view.dart';
 
 part 'app_routes.dart';
 

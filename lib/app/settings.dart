@@ -4,15 +4,11 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 
 class Settings extends GetxController {
-  bool isDarkMode = false;
   Box get _box => Hive.box(AppConstants.SETTINGS_BOX_NAME);
 
+  bool isDarkMode = false;
   late bool isDarkTheme;
   late bool themeHiveSetting;
-
-  //! Getting Theme Stage From HiveBox and Set it to the ThemeMode this will be used in main.dart file
-  ThemeMode get themeStateFromHiveSettingBox =>
-      _getThemeFromHiveBox() ? ThemeMode.dark : ThemeMode.light;
 
   @override
   void onInit() {
@@ -20,6 +16,13 @@ class Settings extends GetxController {
     isDarkTheme = _getThemeFromHiveBox();
     super.onInit();
   }
+
+  String? get token => _box.get(AppConstants.ACCESS_TOKEN);
+  set token(String? value) => _box.put(AppConstants.ACCESS_TOKEN, value);
+
+  //! Getting Theme Stage From HiveBox and Set it to the ThemeMode this will be used in main.dart file
+  ThemeMode get themeStateFromHiveSettingBox =>
+      _getThemeFromHiveBox() ? ThemeMode.dark : ThemeMode.light;
 
   // private Method to Get HiveBox Storage theme Setting value adn Return it
   bool _getThemeFromHiveBox() {

@@ -12,13 +12,18 @@ class TodoView extends GetView {
   Widget build(BuildContext context) {
     final themeData = Theme.of(context);
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            AppConstants.APP_TITLE,
-            style: themeData.textTheme.headline1,
-          ),
-          centerTitle: true,
+      appBar: AppBar(
+        title: Text(
+          AppConstants.APP_TITLE,
+          style: themeData.textTheme.headline1,
         ),
-        body: const Text('todo page'));
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(children: [
+          Obx(() => Text(_controller.todo.value.title)),
+        ]),
+      ),
+    );
   }
 }

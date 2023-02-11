@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/constants/app_constants.dart';
+import 'package:flutter_todo_app/modules/home/controller/home_controller.dart';
 import 'package:flutter_todo_app/routes/app_pages.dart';
 import 'package:get/get.dart';
-
-import 'home_controller.dart';
 
 final _controller = Get.find<HomeController>();
 

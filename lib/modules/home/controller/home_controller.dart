@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo_app/app/settings.dart';
 import 'package:get/get.dart';
-
-import '../../app/settings.dart';
 
 class HomeController extends GetxController
     with GetSingleTickerProviderStateMixin {
